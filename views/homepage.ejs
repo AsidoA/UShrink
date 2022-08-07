@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>UShrink</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <style>
+            .mb-3{
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .table-hover{
+                width: 50%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .logo{
+                text-align: center;
+                font-size: 75px;
+                margin-top:15%;
+            }
+            .u-logo{
+                color: orange;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="logo"><span class="u-logo">U</span>Shrink</h1>
+        <form method="post" action="/shortUrl">
+        <div class="input-group mb-3">
+            <input type="url" name="fullUrl" class="form-control" placeholder="Enter Youre Url...." aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-warning" type="submit" id="button-addon2">Shrink</button>
+          </div>
+        </form>
+
+        <table class="table table-hover">
+            <thead>
+              <tr class="table-light">
+                <th scope="col">Full Url</th>
+                <th scope="col">Short Url</th>
+              </tr>
+            </thead>
+            <tbody>
+                <%shortUrl.forEach(shortUrl=>{%>
+                    <tr class="table-dark">
+                        <th scope="row"><a href='<%=shortUrl.full%>'><%=shortUrl.full%></a></th>
+                        <td><a href='<%=shortUrl.shorted%>'><%=shortUrl.shorted%></a></td>
+                      </tr>
+                    <%})%>
+            </tbody>
+        </table>
+
+        <script src="" async defer></script>
+    </body>
+</html>
