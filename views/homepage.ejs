@@ -48,7 +48,7 @@
                 <%shortUrl.forEach(shortUrl=>{%>
                     <tr class="table-dark">
                         <th scope="row"><a href='<%=shortUrl.full%>'><%=shortUrl.full%></a></th>
-                        <td><a href='<%=shortUrl.shorted%>'><%=shortUrl.shorted%></a></td>
+                        <td><a href='<%=shortUrl.shorted%>'>https://ushrink.herokuapp.com/<%=shortUrl.shorted%></a></td>
                       </tr>
                     <%})%>
             </tbody>
