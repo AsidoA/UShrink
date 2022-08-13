@@ -10,6 +10,7 @@ module.exports = {
         const shr = new Shrinked({
             _id: new mongoose.Types.ObjectId(),
             full:req.body.fullUrl,
+            createdAt:Date.now()
            });
     
           await shr.save()

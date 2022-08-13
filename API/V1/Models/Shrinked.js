@@ -8,7 +8,8 @@ const Schema = mongoose.Schema({
         type:String,
         require:true,
         default:shortid.generate
-    }
+    },
+    createdAt:Date
 });
 
 module.exports = mongoose.model("Shrinked",Schema);
