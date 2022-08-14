@@ -7,11 +7,17 @@ module.exports = {
         res.render('homepage',{shortUrl:shortUrl});
     },
     ShrinkUrl:async (req,res)=>{
+        const substring = 'https://'
+        if(!req.body.fullUrl.includes(substring) ){
+              return res.redirect('/');
+        }
+
         const shr = new Shrinked({
             _id: new mongoose.Types.ObjectId(),
             full:req.body.fullUrl,
             createdAt:Date.now()
            });
+
     
           await shr.save()
          res.redirect('/')
